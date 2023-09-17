@@ -35,4 +35,10 @@ python manage.py runserver
 ## Open your web browser and go to http://127.0.0.1:8000/ to access the web scraper.
 
 Enter a city name and click the "Scrape" button to retrieve property data. The scraped data will be stored in the MongoDB database.
-You can also access the property list at http://127.0.0.1:8000/property_list/{city}/.
+![Screenshot (341)](https://github.com/tehami02/webscrapperDjango/assets/93815993/5b6f8359-a40f-4754-8031-297e615802a2)
+
+## WAIT FOR 10 to 20 Seconds
+
+You can also access the property list at http://127.0.0.1:8000/property_list/city-name/.
+
+![Screenshot (310)](https://github.com/tehami02/webscrapperDjango/assets/93815993/0fd9e24b-28b4-43bc-9b92-65e54bfa59d8)
