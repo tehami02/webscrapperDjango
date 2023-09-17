@@ -4,6 +4,7 @@ from .models import ScrapedProperty
 from .scraping_utils import scrape_page_data
 from selenium import webdriver
 from django.urls import reverse
+from .utils import insert_data_into_mongodb
  
 
 def scrape_properties(request):
@@ -17,6 +18,7 @@ def scrape_properties(request):
         # Call the scrape function to get the scraped data
         scraped_data = scrape_page_data(city,url)
          # Store the scraped data in the database
+        insert_data_into_mongodb(scraped_data)
         for data in scraped_data:
             ScrapedProperty.objects.create(
                 project_name=data['Project Name'],
