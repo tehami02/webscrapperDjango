@@ -15,7 +15,7 @@ Before you begin, ensure you have met the following requirements:
 To get started, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/property-web-scraper.git
+git clone https://github.com/tehami02/webscrapperDjango.git
 ```
 
 Then,
