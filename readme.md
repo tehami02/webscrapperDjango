@@ -42,3 +42,7 @@ Enter a city name and click the "Scrape" button to retrieve property data. The s
 You can also access the property list at http://127.0.0.1:8000/property_list/city-name/.
 
 ![Screenshot (310)](https://github.com/tehami02/webscrapperDjango/assets/93815993/0fd9e24b-28b4-43bc-9b92-65e54bfa59d8)
+
+## MongoDB screenshot -
+![image](https://github.com/tehami02/webscrapperDjango/assets/93815993/f98aac1b-3b70-46d5-b1ce-3d7633176fdb)
+
