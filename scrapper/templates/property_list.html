@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Property List</title>
+</head>
+<body>
+    <h1>Property List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Project Name</th>
+                <th>Locality</th>
+                <th>Price Range</th>
+                <th>Area</th>
+                <th>Type</th>
+                <th>City</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for property in properties %}
+            <tr>
+                <td>{{ property.project_name }}</td>
+                <td>{{ property.locality }}</td>
+                <td>{{ property.price_range }}</td>
+                <td>{{ property.area }}</td>
+                <td>{{ property.property_type }}</td>
+                <td>{{ property.city }}</td>
+                <td><a href="{{ property.url }}" target="_blank">Link</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'scrape_properties' %}">Scrape More Properties</a>
+</body>
+</html>

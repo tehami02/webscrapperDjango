@@ -1,0 +1,22 @@
+<form method="post" action="" id="scrape-form">
+    {% csrf_token %}
+    <input type="text" name="city" id="city-input" placeholder="Enter City">
+    <button type="submit">Scrape</button>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('scrape-form');
+        const cityInput = document.getElementById('city-input');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the default form submission
+            const city = cityInput.value.trim();
+            if (city) {
+                // Dynamically set the form action based on user input
+                form.action = `/scrape/?city=${encodeURIComponent(city)}`;
+                form.submit();  // Submit the form with the updated action
+            }
+        });
+    });
+</script>
