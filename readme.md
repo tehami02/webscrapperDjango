@@ -16,12 +16,12 @@ To get started, clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/your-username/property-web-scraper.git
-cd property
 ```
 
 Then,
 ```bash
 pip install -r requirements.txt
+cd property
 ```
 
 ## Configure other settings in the .env file, such as SECRET_KEY, DEBUG, and ALLOWED_HOSTS .
