@@ -2,11 +2,14 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
 import time  # Import the time module for adding delays
-
+import environ  # Import the config function
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 def scrape_page_data(city,url):
     # Specify the path to the ChromeDriver executable
-    chrome_driver_path = 'C:/Users/teham/Desktop/NewPro/property/chromedriver'
+    chrome_driver_path = env('DRIVER_PATH')
     driver = webdriver.Chrome(executable_path=chrome_driver_path)
     driver.get(url)
     page_source = driver.page_source

@@ -11,7 +11,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import environ
 
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -74,18 +78,20 @@ WSGI_APPLICATION = "property.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
+# Database settings
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'webscrapper',
+        'NAME': env('DB_NAME'),
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-            'host': 'mongodb+srv://tehami02:tehami0022@cluster0.0ydapxk.mongodb.net/?retryWrites=true&w=majority'
+            'host': env('MONGODB_URI')
         }
     }
 }
 
-MONGODB_URI = 'mongodb+srv://tehami02:tehami0022@cluster0.0ydapxk.mongodb.net/?retryWrites=true&w=majority'
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
