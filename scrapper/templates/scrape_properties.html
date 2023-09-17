@@ -1,22 +1,118 @@
-<form method="post" action="" id="scrape-form">
-    {% csrf_token %}
-    <input type="text" name="city" id="city-input" placeholder="Enter City">
-    <button type="submit">Scrape</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Scraper</title>
+    <style>
+      /* Styling for the entire page */
+      body {
+        background-color: #15202b; /* Dark blue background */
+        color: #ffffff; /* White text */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('scrape-form');
-        const cityInput = document.getElementById('city-input');
+      /* Styling for the navbar */
+      .navbar {
+        background-color: #0099cc; /* Blue navbar */
+        padding: 10px 0;
+        text-align: center;
+      }
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();  // Prevent the default form submission
-            const city = cityInput.value.trim();
-            if (city) {
-                // Dynamically set the form action based on user input
-                form.action = `/scrape/?city=${encodeURIComponent(city)}`;
-                form.submit();  // Submit the form with the updated action
-            }
+      /* Styling for the navbar text */
+      .navbar h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      /* Styling for the form container */
+      .form-container {
+        text-align: center;
+        margin-top: 100px;
+      }
+
+      /* Styling for the text input */
+      #city-input {
+        width: 300px; /* Adjust the width as needed */
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-right: 10px;
+      }
+
+      /* Styling for the submit button */
+      #scrape-button {
+        background-color: #0099cc; /* Blue button */
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      /* Hover effect for the submit button */
+      #scrape-button:hover {
+        background-color: #0077aa; /* Darker blue on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <h1>Mobilicis India Private Limited</h1>
+    </div>
+
+    <!-- Form container -->
+    <div class="form-container">
+      <form method="post" action="/scrape/" id="scrape-form">
+        {% csrf_token %}
+        <input
+          type="text"
+          name="city"
+          id="city-input"
+          placeholder="Enter City"
+        />
+        <button type="submit" id="scrape-button">Scrape</button>
+      </form>
+
+      <!-- Link to property list page -->
+      <p id="property-list-link" style="display: none">
+        <a
+          href="#"
+          id="property-list-url"
+          style="color: #0099cc; text-decoration: none"
+          >View Property List</a
+        >
+      </p>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("scrape-form");
+        const cityInput = document.getElementById("city-input");
+        const propertyListLink = document.getElementById("property-list-link");
+        const propertyListUrl = document.getElementById("property-list-url");
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the default form submission
+          const city = cityInput.value.trim();
+          if (city) {
+            // Dynamically set the form action based on user input
+            form.action = `/scrape/?city=${encodeURIComponent(city)}`;
+            form.submit(); // Submit the form with the updated action
+
+            // Display the link to the property list page
+            propertyListUrl.href = `/property_list/${encodeURIComponent(
+              city
+            )}/`;
+            propertyListLink.style.display = "block";
+          }
         });
-    });
-</script>
+      });
+    </script>
+  </body>
+</html>
