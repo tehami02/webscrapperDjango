@@ -39,14 +39,17 @@ python manage.py runserver
 Enter a city name and click the "Scrape" button to retrieve property data. The scraped data will be stored in the MongoDB database.
 Collection will be created automatically , just specify DB_NAME and MONGODB_URI correctly.
 
-![Screenshot (341)](https://github.com/tehami02/webscrapperDjango/assets/93815993/5b6f8359-a40f-4754-8031-297e615802a2)
+![Screenshot (341)](https://github.com/tehami02/webscrapperDjango/assets/93815993/7902d0c7-461e-4e62-935f-3c74f9442058)
+
 
 ## WAIT FOR 10 to 20 Seconds
 
 You can also access the property list at http://127.0.0.1:8000/property_list/city-name/.
 
-![Screenshot (310)](https://github.com/tehami02/webscrapperDjango/assets/93815993/0fd9e24b-28b4-43bc-9b92-65e54bfa59d8)
+![Screenshot (310)](https://github.com/tehami02/webscrapperDjango/assets/93815993/eb5a4e3d-b155-496e-a99b-302cd587836f)
+
 
 ## MongoDB screenshot -
-![image](https://github.com/tehami02/webscrapperDjango/assets/93815993/f98aac1b-3b70-46d5-b1ce-3d7633176fdb)
+![Screenshot (561)](https://github.com/tehami02/webscrapperDjango/assets/93815993/3ab7356f-64fb-42e3-ae17-d77db5394225)
+
 
