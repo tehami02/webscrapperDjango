@@ -1,0 +1,7 @@
+Django
+djongo
+python-decouple
+pymongo
+django-environ
+selenium
+beautifulsoup4
