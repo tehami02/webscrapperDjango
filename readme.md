@@ -24,9 +24,9 @@ Then,
 pip install -r requirements.txt
 ```
 
-## Configure other settings in the .env file, such as SECRET_KEY, DEBUG, and ALLOWED_HOSTS .
+   Configure other settings in the .env file, such as SECRET_KEY, DEBUG, and ALLOWED_HOSTS .
 ## Specially your SECRET_KEY and MONGODB_URI and DB_NAME and DRIVER_PATH as ChromeDriver runs for scrapping data.
-## .env has my MONGODB_URI 
+   .env contains my MONGODB_URI 
 
 ```bash
 python manage.py migrate
