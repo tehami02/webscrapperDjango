@@ -26,6 +26,7 @@ pip install -r requirements.txt
 
 ## Configure other settings in the .env file, such as SECRET_KEY, DEBUG, and ALLOWED_HOSTS .
 ## Specially your SECRET_KEY and MONGODB_URI and DB_NAME
+## .env has my MONGODB_URI 
 
 ```bash
 python manage.py migrate
@@ -35,6 +36,8 @@ python manage.py runserver
 ## Open your web browser and go to http://127.0.0.1:8000/ to access the web scraper.
 
 Enter a city name and click the "Scrape" button to retrieve property data. The scraped data will be stored in the MongoDB database.
+Collection will be created automatically , just specify DB_NAME and MONGODB_URI correctly.
+
 ![Screenshot (341)](https://github.com/tehami02/webscrapperDjango/assets/93815993/5b6f8359-a40f-4754-8031-297e615802a2)
 
 ## WAIT FOR 10 to 20 Seconds
