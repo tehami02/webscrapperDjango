@@ -34,7 +34,7 @@ python manage.py runserver
 ```
 
 ## Open your web browser and go to http://127.0.0.1:8000/ to access the web scraper.
-## .env contains my MONGODB_URI 
+
 
 Enter a city name and click the "Scrape" button to retrieve property data. The scraped data will be stored in the MongoDB database.
 Collection will be created automatically , just specify DB_NAME and MONGODB_URI correctly.
