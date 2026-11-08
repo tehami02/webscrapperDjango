@@ -1,5 +1,44 @@
 # Property Web Scraper
 
+## Live site (Netlify)
+
+The Netlify application serves the city search at `/` and `/scrape/`, with saved
+results at `/property_list/city-name/`. It preserves the original dark interface,
+blue header, and property table. Enter a city and click **Scrape** to request
+listings; successfully retrieved properties are stored in Netlify Database.
+Repeated city/property URLs update existing records instead of creating duplicates.
+The original Django source remains available for local development.
+
+### Deploy and develop
+
+Netlify publishes `public/` and deploys the TypeScript endpoint at
+`/api/properties`. No Django server, MongoDB URI, or local ChromeDriver is needed
+for the hosted version. Netlify provisions its managed Postgres database and
+applies the migration in `netlify/database/migrations/` during deployment.
+
+```bash
+npm ci
+npm run dev
+```
+
+Open `http://localhost:8889`. Use `npm test` and `npm run typecheck` to validate
+changes. Define database changes in `db/schema.ts` and generate migrations with
+`npx drizzle-kit generate --name describe_your_change`; Netlify applies them.
+
+### Source availability
+
+99acres can deny automated requests with HTTP 403 or require browser verification.
+This was observed during deployment troubleshooting. The hosted scraper reads
+public HTML and structured listing data; it cannot bypass source access controls
+or execute browser-only pages. A blocked request shows an explicit error, retains
+saved records, and offers a link to open the city on 99acres. An empty saved list
+means no listings have been saved for that city; it does not imply there are no
+properties on the source site. No sample listings are presented as scraped data.
+A fully successful live scrape remains dependent on the source allowing access.
+
+## Original Django application (local only)
+
+
 This Django app allows you to scrape property data and store it in a MongoDB database.
 
 ## Prerequisites
@@ -20,8 +59,7 @@ git clone https://github.com/tehami02/webscrapperDjango.git
 
 Then,
 ```bash
-pip install -r requirements.txt
-cd property
+pip install -r requirements-django.txt
 ```
 
 ## Configure other settings in the .env file, such as SECRET_KEY, DEBUG, and ALLOWED_HOSTS .
