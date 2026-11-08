@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Property Web Scraper</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="navbar"><a href="/scrape/">Mobilicis India Private Limited</a></header>
+  <main>
+    <section id="search-panel" class="form-container">
+      <p class="eyebrow">PROPERTY WEB SCRAPER</p>
+      <h1>Find properties by city.</h1>
+      <p class="intro">Retrieve property listings from 99acres and save them for later.</p>
+      <form id="scrape-form">
+        <label for="city-input">City name</label>
+        <div class="form-row"><input type="text" name="city" id="city-input" placeholder="Enter City" required minlength="2" maxlength="80" autocomplete="address-level2"><button type="submit" id="scrape-button">Scrape</button></div>
+      </form>
+      <p class="hint">A request can take up to 20 seconds. Availability depends on 99acres allowing access.</p>
+      <p><a id="saved-link" href="#" hidden>View saved properties for this city</a></p>
+    </section>
+    <p id="status" role="status" aria-live="polite" hidden></p>
+    <p id="source-link" hidden><a href="https://www.99acres.com" target="_blank" rel="noopener noreferrer">Open this city on 99acres ↗</a></p>
+    <section id="results" hidden>
+      <div class="results-heading"><div><p class="eyebrow" id="results-city"></p><h1>Property List</h1></div><a href="/scrape/">Scrape More Properties →</a></div>
+      <p id="result-count"></p>
+      <div class="table-wrap"><table><caption class="sr-only">Saved property listings</caption><thead><tr><th>Project Name</th><th>Locality</th><th>Price Range</th><th>Area</th><th>Type</th><th>City</th><th>URL</th></tr></thead><tbody id="property-rows"></tbody></table></div>
+      <p id="empty" hidden>No saved properties for this city yet. <a href="/scrape/">Start a scrape</a> to retrieve listings.</p>
+    </section>
+  </main>
+  <footer>Property Web Scraper <span>Source: 99acres · Only retrieved listings are saved.</span></footer>
+</body>
+</html>

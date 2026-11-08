@@ -1,0 +1,22 @@
+{
+  "name": "99scraper",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "netlify dev --port 8889",
+    "test": "tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@netlify/database": "^2.0.3",
+    "@netlify/functions": "^6.1.1",
+    "cheerio": "^1.2.0",
+    "drizzle-orm": "^1.0.0-beta.22"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "drizzle-kit": "^1.0.0-beta.22",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
